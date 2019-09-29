@@ -1,0 +1,24 @@
+﻿<Window x:Class="AudioMail.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AudioMail"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="New Mail" HorizontalAlignment="Left" Margin="33,36,0,0" VerticalAlignment="Top" Width="100" Height="40" Click="Button_Click"/>
+        <Button Content="Received" HorizontalAlignment="Left" Margin="33,238,0,0" VerticalAlignment="Top" Width="100" Height="20"/>
+        <Button Content="Starred" HorizontalAlignment="Left" Height="20" Margin="33,271,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Deleted" HorizontalAlignment="Left" Margin="33,305,0,0" VerticalAlignment="Top" Width="100" Height="20"/>
+        <Button Content="Sent" HorizontalAlignment="Left" Margin="33,203,0,0" VerticalAlignment="Top" Width="100" Height="20" Click="Button_Click_1"/>
+        <ListView HorizontalAlignment="Left" Height="289" Margin="174,38,0,0" VerticalAlignment="Top" Width="576" SelectionChanged="ListView_SelectionChanged" FontFamily="Elephant">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>
