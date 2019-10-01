@@ -11,14 +11,7 @@
         <Button Content="Received" HorizontalAlignment="Left" Margin="33,238,0,0" VerticalAlignment="Top" Width="100" Height="20"/>
         <Button Content="Starred" HorizontalAlignment="Left" Height="20" Margin="33,271,0,0" VerticalAlignment="Top" Width="100"/>
         <Button Content="Deleted" HorizontalAlignment="Left" Margin="33,305,0,0" VerticalAlignment="Top" Width="100" Height="20"/>
-        <Button Content="Sent" HorizontalAlignment="Left" Margin="33,203,0,0" VerticalAlignment="Top" Width="100" Height="20" Click="Button_Click_1"/>
-        <ListView HorizontalAlignment="Left" Height="289" Margin="174,38,0,0" VerticalAlignment="Top" Width="576" SelectionChanged="ListView_SelectionChanged" FontFamily="Elephant">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+
 
     </Grid>
 </Window>
