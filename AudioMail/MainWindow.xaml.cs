@@ -28,7 +28,8 @@ namespace AudioMail
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            NewMail newMailWindow = new NewMail();
+            newMailWindow.Show();
         }
     }
 }

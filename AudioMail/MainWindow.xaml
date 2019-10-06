@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="New Mail" HorizontalAlignment="Left" Margin="33,36,0,0" VerticalAlignment="Top" Width="100" Height="40" Click="Button_Click"/>
-        <Button Content="Received" HorizontalAlignment="Left" Margin="33,238,0,0" VerticalAlignment="Top" Width="100" Height="20"/>
-        <Button Content="Starred" HorizontalAlignment="Left" Height="20" Margin="33,271,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Deleted" HorizontalAlignment="Left" Margin="33,305,0,0" VerticalAlignment="Top" Width="100" Height="20"/>
+        <Button x:Name="NewMail_Button" Content="New Mail" HorizontalAlignment="Left" Margin="33,36,0,0" VerticalAlignment="Top" Width="100" Height="40" Click="Button_Click"/>
+        <Button x:Name="Received_Button" Content="Received" HorizontalAlignment="Left" Margin="33,238,0,0" VerticalAlignment="Top" Width="100" Height="20"/>
+        <Button x:Name="Starred_Button" Content="Starred" HorizontalAlignment="Left" Height="20" Margin="33,271,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="Deleted_Button" Content="Deleted" HorizontalAlignment="Left" Margin="33,305,0,0" VerticalAlignment="Top" Width="100" Height="20"/>
 
 
     </Grid>

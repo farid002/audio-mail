@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AudioMail"
         mc:Ignorable="d"
-        Title="NewMail" Height="450" Width="800">
+        Title="NewMail" Height="450" Width="800" Loaded="NewMail_Loaded">
     <Grid>
-        <Button Content="Record" HorizontalAlignment="Left" Margin="351,72,0,0" VerticalAlignment="Top" Width="75"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120*"/>
+            <ColumnDefinition Width="673*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="Record_Button" Content="Record" HorizontalAlignment="Left" Margin="171,72,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Grid.Column="1"/>
+        <Button x:Name="Stop_Button" Content="Stop" Grid.Column="1" HorizontalAlignment="Left" Margin="294,72,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.333,0.396" Click="Stop_Button_Click"/>
+        <RichTextBox x:Name="newMailBox" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="142,144,0,0" VerticalAlignment="Top" Width="263">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
     </Grid>
 </Window>
