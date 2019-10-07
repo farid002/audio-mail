@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Google.Cloud.Speech.V1;
+using System.Speech.Recognition;
+
 
 namespace AudioMail
 {
@@ -21,15 +23,72 @@ namespace AudioMail
     /// </summary>
     public partial class MainWindow : Window
     {
+        SpeechRecognitionEngine speechRecMain = new SpeechRecognitionEngine();
         public MainWindow()
         {
             InitializeComponent();
+            Choices commands = new Choices();
+            commands.Add(new string[] {"compose new mail", "open recieved mails", "open deleted mails", "open starred mails" });
+            GrammarBuilder grammarBuilder = new GrammarBuilder();
+            grammarBuilder.Append(commands);
+            Grammar grammar = new Grammar(grammarBuilder);
+
+            speechRecMain.LoadGrammarAsync(grammar);
+            speechRecMain.SetInputToDefaultAudioDevice();
+            speechRecMain.SpeechRecognized += speechRecMain_SpeechRecognized;
+        }
+
+        //Record button functions
+        private void Record_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Record_Button.IsEnabled = false;
+            Progress_Bar.IsEnabled = true;
+            Stop_Button.IsEnabled = true;
+            speechRecMain.RecognizeAsync(RecognizeMode.Multiple);
+
+        }
+
+        //Speech to text engine
+        void speechRecMain_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+        {
+
+            switch (e.Result.Text)
+            {
+                case "mail":
+                    NewMail newMailWindow = new NewMail();
+                    newMailWindow.Show();
+                    break;
+                case "open recieved mails":
+                    break;
+                case "open starred mails":
+                    break;
+                case "open deleted mails":
+                    break;
+            }
+        }
+
+        private void Stop_Button_Click(object sender, RoutedEventArgs e)
+        {
+            speechRecMain.RecognizeAsyncStop();
+            Record_Button.IsEnabled = true;
+            Stop_Button.IsEnabled = false;
+            Progress_Bar.IsEnabled = false;
+
+        }
+
+        private void NewMail_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             NewMail newMailWindow = new NewMail();
             newMailWindow.Show();
+        }
+        private void Button1_Click(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

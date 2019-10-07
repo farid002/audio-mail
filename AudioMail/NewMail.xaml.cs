@@ -26,17 +26,27 @@ namespace AudioMail
             
         }
         
-        private void Button_Click(object sender, RoutedEventArgs e)
+        //Record button functions
+        private void Record_Button_Click(object sender, RoutedEventArgs e)
         {
-            speechRecEngine.RecognizeAsync(RecognizeMode.Multiple);
+            Record_Button.IsEnabled = false;
+            Progress_Bar.IsEnabled = true;
+            Stop_Button.IsEnabled = true;
+            speechRecEngine.RecognizeAsync(RecognizeMode.Multiple);   
+            
         }
 
-        void speechRecEngine_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+        //Speech to text engine
+        void SpeechRecEngine_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
+           
             switch (e.Result.Text)
             {
                 case "say my name":
                     newMailBox.AppendText("Farid\n");
+                    break;
+                case "open sent":
+                    newMailBox.AppendText("Josha\n");
                     break;
             }
         }
@@ -44,6 +54,10 @@ namespace AudioMail
         private void Stop_Button_Click(object sender, RoutedEventArgs e)
         {
             speechRecEngine.RecognizeAsyncStop();
+            Record_Button.IsEnabled = true;
+            Stop_Button.IsEnabled = false;
+            Progress_Bar.IsEnabled = false;
+
         }
 
         private void NewMail_Loaded(object sender, RoutedEventArgs e)
@@ -56,7 +70,8 @@ namespace AudioMail
 
             speechRecEngine.LoadGrammarAsync(grammar);
             speechRecEngine.SetInputToDefaultAudioDevice();
-            speechRecEngine.SpeechRecognized += speechRecEngine_SpeechRecognized;
+            speechRecEngine.SpeechRecognized += SpeechRecEngine_SpeechRecognized;
+            
         }
     }
 }
