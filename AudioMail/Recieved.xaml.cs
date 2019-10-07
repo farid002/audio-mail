@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace AudioMail
 {
     /// <summary>
-    /// Interaction logic for DeletedWindow.xaml
+    /// Interaction logic for Recieved.xaml
     /// </summary>
-    public partial class DeletedWindow : Window
+    public partial class Recieved : Page
     {
-        public DeletedWindow()
+        public Recieved()
         {
             InitializeComponent();
         }

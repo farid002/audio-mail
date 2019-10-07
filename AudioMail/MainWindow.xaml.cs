@@ -19,7 +19,7 @@ using System.Speech.Recognition;
 namespace AudioMail
 {
     /// <summary>
-    /// MainWindow.xaml etkileşim mantığı
+    /// MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -45,6 +45,7 @@ namespace AudioMail
             Progress_Bar.IsEnabled = true;
             Stop_Button.IsEnabled = true;
             speechRecMain.RecognizeAsync(RecognizeMode.Multiple);
+            Progress_Bar.Value = speechRecMain.AudioLevel;
 
         }
 
@@ -54,15 +55,18 @@ namespace AudioMail
 
             switch (e.Result.Text)
             {
-                case "mail":
+                case "compose new mail":
                     NewMail newMailWindow = new NewMail();
                     newMailWindow.Show();
                     break;
                 case "open recieved mails":
+                    Main.Content = new Recieved();
                     break;
                 case "open starred mails":
+                    Main.Content = new Starred();
                     break;
                 case "open deleted mails":
+                    Main.Content = new Deleted();
                     break;
             }
         }

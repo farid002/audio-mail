@@ -132,5 +132,9 @@ C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\A
 C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\AudioMail.csproj.CopyComplete
 C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\AudioMail.exe
 C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\AudioMail.pdb
-C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\DeletedWindow.g.cs
-C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\DeletedWindow.baml
+C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\Deleted.g.cs
+C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\Deleted.baml
+C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\Recieved.g.cs
+C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\Starred.g.cs
+C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\Recieved.baml
+C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\Starred.baml

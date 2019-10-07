@@ -7,19 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+       
+        <Frame x:Name="Main" Margin="0,0,-0.4,0"></Frame>
         <Button x:Name="NewMail_Button" Content="New Mail" HorizontalAlignment="Left" Margin="33,36,0,0" VerticalAlignment="Top" Width="100" Height="40" Click="Button_Click"/>
         <Button x:Name="Received_Button" Content="Received" HorizontalAlignment="Left" Margin="33,238,0,0" VerticalAlignment="Top" Width="100" Height="20"/>
         <Button x:Name="Starred_Button" Content="Starred" HorizontalAlignment="Left" Height="20" Margin="33,271,0,0" VerticalAlignment="Top" Width="100"/>
         <Button x:Name="Deleted_Button" Content="Deleted" HorizontalAlignment="Left" Margin="33,305,0,0" VerticalAlignment="Top" Width="100" Height="20"/>
-        <ListView x:Name="List1" HorizontalAlignment="Left" Height="227" Margin="176,98,0,0" VerticalAlignment="Top" Width="437">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
         <Button x:Name="Record_Button" Content="Record" HorizontalAlignment="Left" Margin="242,36,0,0" VerticalAlignment="Top" Width="75" Click="Record_Button_Click"/>
-        <Button x:Name="Stop_Button" Content="Stop" HorizontalAlignment="Left" Margin="387,36,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False"/>
+        <Button x:Name="Stop_Button" Content="Stop" HorizontalAlignment="Left" Margin="387,36,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="Stop_Button_Click"/>
         <ProgressBar x:Name="Progress_Bar" HorizontalAlignment="Left" Height="10" Margin="304,66,0,0" VerticalAlignment="Top" Width="100"/>
 
 
