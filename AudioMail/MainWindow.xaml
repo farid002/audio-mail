@@ -5,29 +5,91 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AudioMail"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="MainWindow_Loaded">
+        Title="MainWindow" Height="511.6" Width="900.8" Loaded="MainWindow_Loaded">
     <Grid>
 
-        <Frame x:Name="Main" Margin="0,0,-0.4,0"></Frame>
-        <Button x:Name="NewMail_Button" Content="New Mail" HorizontalAlignment="Left" Margin="33,36,0,0" VerticalAlignment="Top" Width="100" Height="40" Click="Button_Click"/>
-        <Button x:Name="Received_Button" Content="Received" HorizontalAlignment="Left" Margin="33,238,0,0" VerticalAlignment="Top" Width="100" Height="20" Click="Recieved_Button_Click"/>
-        <Button x:Name="Starred_Button" Content="Starred" HorizontalAlignment="Left" Height="20" Margin="33,271,0,0" VerticalAlignment="Top" Width="100" Click="Starred_Button_Click"/>
-        <Button x:Name="Deleted_Button" Content="Deleted" HorizontalAlignment="Left" Margin="33,305,0,0" VerticalAlignment="Top" Width="100" Height="20" Click="Deleted_Button_Click"/>
-        <Button x:Name="Record_Button" Content="Record" HorizontalAlignment="Left" Margin="242,36,0,0" VerticalAlignment="Top" Width="75" Click="Record_Button_Click"/>
-        <Button x:Name="Stop_Button" Content="Stop" HorizontalAlignment="Left" Margin="387,36,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="Stop_Button_Click"/>
-        <ProgressBar x:Name="Progress_Bar" HorizontalAlignment="Left" Height="10" Margin="304,66,0,0" VerticalAlignment="Top" Width="100"/>
-        <RichTextBox x:Name="rchTxtBox" HorizontalAlignment="Left" Height="190" Margin="525,186,0,0" VerticalAlignment="Top" Width="213" TextChanged="RchTxtBox_TextChanged">
-            <FlowDocument>
-                <Paragraph>
-                    <Run Text=""/>
-                </Paragraph>
-            </FlowDocument>
-        </RichTextBox>
-        <Button x:Name="Sent" Content="Sent" HorizontalAlignment="Left" Margin="33,208,0,0" VerticalAlignment="Top" Width="100" Click="Sent_Button_Click"/>
-        <ListBox x:Name="ListBoxtest" HorizontalAlignment="Left" Height="168" Margin="242,208,0,0" VerticalAlignment="Top" Width="235" SelectionChanged="ListBox_SelectionChanged">
-            
-        </ListBox>
+        <Frame x:Name="Main" Margin="0,0,0.4,0.4" RenderTransformOrigin="0.5,0.5">
+            <Frame.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Frame.RenderTransform>
+        </Frame>
+        <Button x:Name="Received_Button" Content="Received" HorizontalAlignment="Left" Margin="51,316,0,0" VerticalAlignment="Top" Width="100" Height="20" Click="Recieved_Button_Click"/>
+        <Button x:Name="Starred_Button" Content="Starred" HorizontalAlignment="Left" Height="20" Margin="51,352,0,0" VerticalAlignment="Top" Width="100" Click="Starred_Button_Click"/>
+        <Button x:Name="Deleted_Button" Content="Deleted" HorizontalAlignment="Left" Margin="51,386,0,0" VerticalAlignment="Top" Width="100" Height="20" Click="Deleted_Button_Click"/>
+        <Button x:Name="Record_Button" Content="Record" HorizontalAlignment="Left" Margin="20,50,-1,0" VerticalAlignment="Top" Width="75" Click="Record_Button_Click" RenderTransformOrigin="0.5,0.5"/>
+        <Button x:Name="Stop_Button" Content="Stop" HorizontalAlignment="Left" Margin="108,50,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="Stop_Button_Click" RenderTransformOrigin="0.421,0.615"/>
+        <ProgressBar x:Name="Progress_Bar" HorizontalAlignment="Left" Height="12" Margin="20,84,685,0" VerticalAlignment="Top" Width="163"/>
+        <Button x:Name="Sent" Content="Sent" HorizontalAlignment="Left" Margin="51,283,0,0" VerticalAlignment="Top" Width="100" Click="Sent_Button_Click"/>
+        <Label Content="GIVE A COMMAND" HorizontalAlignment="Left" Margin="51,20,0,0" VerticalAlignment="Top" Width="127" FontFamily="Segoe UI Black"/>
+      
+        <ListView x:Name="SentList" HorizontalAlignment="Center" Height="356" Margin="150,50,0,0" VerticalAlignment="Top" Width="644" SelectionChanged="SentList_SelectionChanged" Visibility="Visible">
 
+            <ListView.View>
+
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Title}" Header="Mail Title" Width="400"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="Date" Width="100"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+ 
+        </ListView>
+
+        <ListView x:Name="ReceivedList" ItemsSource="{Binding ReceivedMailList}" HorizontalAlignment="Center" Height="356" Margin="222,50,28.4,0" VerticalAlignment="Top" Width="644" SelectionChanged="ReceivedList_SelectionChanged" Visibility="Hidden">
+
+            <ListView.View>
+
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Title}" Header="Mail Title" Width="400"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="Date" Width="100"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <ListView x:Name="DeletedList" ItemsSource="{Binding DeletedMailList}" HorizontalAlignment="Center" Height="356" Margin="222,50,28.4,0" VerticalAlignment="Top" Width="644" SelectionChanged="DeletedList_SelectionChanged" Visibility="Hidden">
+
+            <ListView.View>
+
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Title}" Header="Mail Title" Width="400"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="Date" Width="100"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <ListView x:Name="StarredList" ItemsSource="{Binding StarredMailList}" HorizontalAlignment="Center" Height="356" Margin="222,50,28.4,0" VerticalAlignment="Top" Width="644" SelectionChanged="StarredList_SelectionChanged" Visibility="Hidden">
+
+            <ListView.View>
+
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Title}" Header="Mail Title" Width="400"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="Date" Width="100"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+        <GroupBox x:Name="NewMail_GroupBox" Header="New Mail" HorizontalAlignment="Right" Height="317" Margin="0,0,20,0" VerticalAlignment="Bottom" Width="440" Background="#FFEAEAEA" BorderBrush="#FF062131" Visibility="Hidden">
+            <StackPanel>
+                <TextBlock x:Name="To_TextBlock">To:</TextBlock>
+                <TextBox x:Name="To_TextBox"/>
+                <TextBlock x:Name="Subject_TextBlock">Subject:</TextBlock>
+                <TextBox x:Name="Subject_TextBox"/>
+                
+                <RichTextBox x:Name="NewMail_RichTextBox" HorizontalAlignment="Left" Height="187" Margin="0,10,-2,0" VerticalAlignment="Top" Width="430">
+                    <FlowDocument/>
+                </RichTextBox>
+                <Button x:Name="Record_Button1" Content="Record" Width="50" Margin="0,5,360,0"/>
+                <Button x:Name="Send_Button" Content="Send" Width="50" Margin="360,-20,0,0" Click="Send_Button_Click_1"/>
+                <Button x:Name="Stop_Button1" Content="Stop" Margin="-220,-20,0,0" Width="50" Height="20"/>
+            </StackPanel>
+
+
+        </GroupBox>
+        <Button x:Name="NewMail_Button" Content="New Mail" HorizontalAlignment="Left" Margin="51,203,0,0" VerticalAlignment="Top" Width="100" Height="38" Click="NewMail_Button_Click"/>
 
     </Grid>
 </Window>
