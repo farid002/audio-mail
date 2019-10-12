@@ -138,3 +138,5 @@ C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\A
 C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\Starred.g.cs
 C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\Recieved.baml
 C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\Starred.baml
+C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\Sent.g.cs
+C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\Sent.baml

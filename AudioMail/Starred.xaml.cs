@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
+
 namespace AudioMail
 {
     /// <summary>
@@ -20,9 +22,27 @@ namespace AudioMail
     /// </summary>
     public partial class Starred : Page
     {
+        public List<Mail> StarredMailList { get; set; }
+
         public Starred()
         {
             InitializeComponent();
+            StarredMailList = new List<Mail>();
+            Mail mail1 = new Mail();
+            mail1.Title = "sdsds";
+            DateTime date = DateTime.UtcNow.Date;
+            mail1.Date = date.ToString("dd/MM/yyyy");
+
+            StarredMailList.Add(mail1);
+            DataContext = this;
+
+        }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
+
+ 
 }

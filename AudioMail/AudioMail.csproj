@@ -105,8 +105,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Mail.cs" />
     <Compile Include="Recieved.xaml.cs">
       <DependentUpon>Recieved.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sent.xaml.cs">
+      <DependentUpon>Sent.xaml</DependentUpon>
     </Compile>
     <Compile Include="Starred.xaml.cs">
       <DependentUpon>Starred.xaml</DependentUpon>
@@ -135,6 +139,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Recieved.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -16,12 +16,11 @@ using System.Windows.Shapes;
 namespace AudioMail
 {
     /// <summary>
-    /// Interaction logic for Deleted.xaml
+    /// Interaction logic for Sent.xaml
     /// </summary>
-    public partial class Deleted : Page
+    public partial class Sent : Page
     {
-
-        public Deleted()
+        public Sent()
         {
             InitializeComponent();
         }

@@ -23,6 +23,12 @@ namespace AudioMail
         public Recieved()
         {
             InitializeComponent();
+            
+        }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
         }
     }
 }

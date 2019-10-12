@@ -9,6 +9,13 @@
       Title="Deleted">
 
     <Grid>
-        <TextBlock Text="Deleted" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"></TextBlock>
+        <ListView HorizontalAlignment="Left" Height="350" Margin="186,100,0,-0.4" VerticalAlignment="Top" Width="557" SelectionChanged="ListView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
     </Grid>
 </Page>
