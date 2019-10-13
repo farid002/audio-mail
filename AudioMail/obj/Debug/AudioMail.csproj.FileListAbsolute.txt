@@ -118,13 +118,11 @@ C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\A
 C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\bin\Debug\System.Interactive.Async.xml
 C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\AudioMail.csprojAssemblyReference.cache
 C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\MainWindow.g.cs
-C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\NewMail.g.cs
 C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\App.g.cs
 C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\AudioMail_Content.g.cs
 C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\AudioMail_MarkupCompile.cache
 C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\AudioMail_MarkupCompile.lref
 C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\MainWindow.baml
-C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\NewMail.baml
 C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\AudioMail.g.resources
 C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\AudioMail.Properties.Resources.resources
 C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\AudioMail.csproj.GenerateResource.cache
@@ -132,14 +130,6 @@ C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\A
 C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\AudioMail.csproj.CopyComplete
 C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\AudioMail.exe
 C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\AudioMail.pdb
-C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\Deleted.g.cs
-C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\Deleted.baml
-C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\Recieved.g.cs
-C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\Starred.g.cs
-C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\Recieved.baml
-C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\Starred.baml
-C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\Sent.g.cs
-C:\Users\Joshgun Rzabayli\Desktop\FALL 2019-2020\BLG439E\audio-mail\audio-mail\AudioMail\obj\Debug\Sent.baml
 C:\Users\hferi\Desktop\lessons\7.term\BLG-439E\audio-mail\AudioMail\bin\Debug\grpc_csharp_ext.x86.dll
 C:\Users\hferi\Desktop\lessons\7.term\BLG-439E\audio-mail\AudioMail\bin\Debug\grpc_csharp_ext.x64.dll
 C:\Users\hferi\Desktop\lessons\7.term\BLG-439E\audio-mail\AudioMail\bin\Debug\libgrpc_csharp_ext.x86.so

@@ -42,41 +42,36 @@ namespace AudioMail
     
     public partial class MainWindow : Window
     {
+        //Creating new SpeechRecognition Engine
         SpeechRecognitionEngine speechRecMain = new SpeechRecognitionEngine();
         SpeechRecognitionEngine speechRecNewMail = new SpeechRecognitionEngine();
         SpeechSynthesizer synthNewMail = new SpeechSynthesizer();
-
-        public List<Mail> SentMailList { get; set; }
-        public List<Mail> StarredMailList { get; set; }
-        public List<Mail> ReceivedMailList { get; set; }
-        public List<Mail> DeletedMailList { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        //Initial functions while the window is loaded
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             //Declaration and definition of command voice engine
             Choices commands = new Choices();
-            commands.Add(new string[] { "create new mail", "open sent mails", "open recieved mails", "open deleted mails", "open starred mails" });
+            commands.Add(new string[] { "create new mail", "open sent mails", "open received mails", "open deleted mails", "open starred mails" });
             GrammarBuilder grammarBuilder = new GrammarBuilder();
             grammarBuilder.Append(commands);
             Grammar grammar = new Grammar(grammarBuilder);
             speechRecMain.LoadGrammarAsync(grammar);
             speechRecMain.SetInputToDefaultAudioDevice();
-            speechRecMain.SpeechRecognized += speechRecMain_SpeechRecognized;
-
+            speechRecMain.SpeechRecognized += SpeechRecMain_SpeechRecognized;
 
             //Declaration and definition of new mail speech-to-text engine
             DictationGrammar dictationGrammar = new DictationGrammar();
             speechRecNewMail.LoadGrammarAsync(dictationGrammar);
             speechRecNewMail.SetInputToDefaultAudioDevice();
-            speechRecNewMail.SpeechRecognized += speechRecNewMail_SpeechRecognized;
+            speechRecNewMail.SpeechRecognized += SpeechRecNewMail_SpeechRecognized;
 
             //Declaration and definition of new mail text-to-speech engine
-            
             synthNewMail.SetOutputToDefaultAudioDevice();
             StopNewMail_Button.IsEnabled = false;
         }
@@ -90,30 +85,35 @@ namespace AudioMail
         }
 
         //Speech to text engine
-        void speechRecMain_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+        void SpeechRecMain_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             switch (e.Result.Text)
             {
+                //While the user says "create new mail" NewMail window will appear.
                 case "create new mail":
                     ButtonAutomationPeer peerNewMail = new ButtonAutomationPeer(NewMail_Button);
                     IInvokeProvider invokeProvNewMail = peerNewMail.GetPattern(PatternInterface.Invoke) as IInvokeProvider;
                     invokeProvNewMail.Invoke();
                     break;
+                //While the user says "open sent mails" Sent Mail List will appear.
                 case "open sent mails":
                     ButtonAutomationPeer peerSent = new ButtonAutomationPeer(Sent_Button);
                     IInvokeProvider invokeProvSent = peerSent.GetPattern(PatternInterface.Invoke) as IInvokeProvider;
                     invokeProvSent.Invoke();
                     break;
-                case "open recieved mails":
+                //While the user says "open received mails" Received Mail List will appear.
+                case "open received mails":
                     ButtonAutomationPeer peerReceived = new ButtonAutomationPeer(Received_Button);
                     IInvokeProvider invokeProvReceived = peerReceived.GetPattern(PatternInterface.Invoke) as IInvokeProvider;
                     invokeProvReceived.Invoke();
                     break;
+                //While the user says "open starred mails" Starred Mail List will appear.
                 case "open starred mails":
                     ButtonAutomationPeer peerStarred = new ButtonAutomationPeer(Starred_Button);
                     IInvokeProvider invokeProvStarred = peerStarred.GetPattern(PatternInterface.Invoke) as IInvokeProvider;
                     invokeProvStarred.Invoke();
                     break;
+                //While the user says "open deleted mails" Deleted Mail List will appear.
                 case "open deleted mails":
                     ButtonAutomationPeer peerDeleted = new ButtonAutomationPeer(Deleted_Button);
                     IInvokeProvider invokeProvDeleted = peerDeleted.GetPattern(PatternInterface.Invoke) as IInvokeProvider;
@@ -122,6 +122,7 @@ namespace AudioMail
             }
         }
 
+        // "Stop" button functions
         private void Stop_Button_Click(object sender, RoutedEventArgs e)
         {
             speechRecMain.RecognizeAsyncStop();
@@ -130,7 +131,7 @@ namespace AudioMail
 
         }
 
-
+        // "Received" button functions
         private void Recieved_Button_Click(object sender, RoutedEventArgs e)
         {
             SentList.Visibility = Visibility.Hidden;
@@ -140,6 +141,7 @@ namespace AudioMail
             ListLabel.Content = "RECEIVED MAILS";
         }
 
+        // "Starred" button functions
         private void Starred_Button_Click(object sender, RoutedEventArgs e)
         {
             SentList.Visibility = Visibility.Hidden;
@@ -149,6 +151,7 @@ namespace AudioMail
             ListLabel.Content = "STARRED MAILS";
         }
 
+        // "Deleted" button functions
         private void Deleted_Button_Click(object sender, RoutedEventArgs e)
         {
             SentList.Visibility = Visibility.Hidden;
@@ -158,6 +161,7 @@ namespace AudioMail
             ListLabel.Content = "DELETED MAILS";
         }
 
+        // "Sent" button functions
         private void Sent_Button_Click(object sender, RoutedEventArgs e)
         {
             DeletedList.Visibility = Visibility.Hidden;
@@ -167,26 +171,7 @@ namespace AudioMail
             ListLabel.Content = "SENT MAILS";
         }
 
-        private void SentList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-        }
-
-        private void StarredList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void DeletedList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void ReceivedList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
+        // "NewMail" button functions
         private void NewMail_Button_Click(object sender, RoutedEventArgs e)
         {
             To_TextBox.Text = "";
@@ -196,7 +181,7 @@ namespace AudioMail
             NewMail_GroupBox.Visibility = Visibility.Visible;
         }
 
-
+        // "Send" button(Inside of the NewMail Window) functions
         private void Send_Button_Click_1(object sender, RoutedEventArgs e)
         {
 
@@ -233,6 +218,7 @@ namespace AudioMail
             NewMail_RichTextBox.AppendText(To_TextBox.Text);
         }
 
+        // "Record" button(Inside of the NewMail Window) functions
         private void RecordNewMail_Button_Click(object sender, RoutedEventArgs e)
         {
             RecordNewMail_Button.IsEnabled = false;
@@ -249,6 +235,7 @@ namespace AudioMail
             
         }
 
+        // "Record" button(Inside of the NewMail Window) functions
         private void StopNewMail_Button_Click(object sender, RoutedEventArgs e)
         {
             NewMail_RichTextBox.AppendText(" ");
@@ -257,11 +244,13 @@ namespace AudioMail
             StopNewMail_Button.IsEnabled = false;
         }
 
-        void speechRecNewMail_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+        //Adding recored text to the "NewMail_RichTextBox" after clicking "Record" Button (Inside of the NewMail Window)
+        void SpeechRecNewMail_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             NewMail_RichTextBox.AppendText(e.Result.Text);
         }
 
+        // "Listen" button(Inside of the NewMail Window) functions
         private void ListenNewMail_Button_Click(object sender, RoutedEventArgs e)
         {
             // Speak a string.
@@ -269,6 +258,7 @@ namespace AudioMail
             synthNewMail.Speak(NewMail_RichTextBox.Selection.Text);
         }
 
+        // "Close" button(Inside of the NewMail Window) functions
         private void CloseNewMail_Button_Click(object sender, RoutedEventArgs e)
         {
             NewMail_GroupBox.Visibility = Visibility.Hidden;
@@ -286,10 +276,9 @@ namespace AudioMail
                 IInvokeProvider invokeProvNewMail = peerStopNewMail.GetPattern(PatternInterface.Invoke) as IInvokeProvider;
                 invokeProvNewMail.Invoke();
             }
-            
-
         }
 
+        // "Delete" button(Inside of the "CurrentMail" Window) functions
         private void Delete_Button_Click(object sender, RoutedEventArgs e)
         {
             if (SentList.SelectedItem != null)
@@ -325,6 +314,7 @@ namespace AudioMail
             }
         }
 
+        // "MakeStarred" button(Inside of the "CurrentMail" Window) functions
         private void MakeStarred_Button_Click(object sender, RoutedEventArgs e)
         {
             if (SentList.SelectedItem != null)
@@ -353,6 +343,7 @@ namespace AudioMail
             }
         }
 
+        // "Close" button(Inside of the "CurrentMail" Window) functions
         private void CloseCurrentMail_Button_Click(object sender, RoutedEventArgs e)
         {
             CurrentMail_GroupBox.Visibility = Visibility.Hidden;
@@ -367,6 +358,7 @@ namespace AudioMail
             CurrentMail_RichTextBox.Selection.Text = currentmail.Content;
         }
 
+        //The actions while the mail item inside of the "ReceivedMailList" is double clicked
         private void ReceivedList_DoubleClick(object sender, MouseButtonEventArgs e)
         {
             CurrentMail_GroupBox.Visibility = Visibility.Visible;
@@ -375,6 +367,7 @@ namespace AudioMail
             CurrentMail_RichTextBox.Selection.Text = currentmail.Content;
         }
 
+        //The actions while the mail item inside of the "DeletedMailList" is double clicked
         private void DeletedList_DoubleClick(object sender, MouseButtonEventArgs e)
         {
             CurrentMail_GroupBox.Visibility = Visibility.Visible;
@@ -383,6 +376,7 @@ namespace AudioMail
             CurrentMail_RichTextBox.Selection.Text = currentmail.Content;
         }
 
+        //The actions while the mail item inside of the "StarredMailList" is double clicked
         private void StarredList_DoubleClick(object sender, MouseButtonEventArgs e)
         {
             CurrentMail_GroupBox.Visibility = Visibility.Visible;
