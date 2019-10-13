@@ -360,24 +360,35 @@ namespace AudioMail
 
         private void SentList_DoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Mail currentmail = (Mail)SentList.SelectedItem;
+
             CurrentMail_GroupBox.Visibility = Visibility.Visible;
-            CurrentMail_RichTextBox.AppendText(currentmail.Content);
+            Mail currentmail = (Mail)SentList.SelectedItem;
+            CurrentMail_RichTextBox.SelectAll();
+            CurrentMail_RichTextBox.Selection.Text = currentmail.Content;
         }
 
         private void ReceivedList_DoubleClick(object sender, MouseButtonEventArgs e)
         {
             CurrentMail_GroupBox.Visibility = Visibility.Visible;
+            Mail currentmail = (Mail)ReceivedList.SelectedItem;
+            CurrentMail_RichTextBox.SelectAll();
+            CurrentMail_RichTextBox.Selection.Text = currentmail.Content;
         }
 
         private void DeletedList_DoubleClick(object sender, MouseButtonEventArgs e)
         {
             CurrentMail_GroupBox.Visibility = Visibility.Visible;
+            Mail currentmail = (Mail)DeletedList.SelectedItem;
+            CurrentMail_RichTextBox.SelectAll();
+            CurrentMail_RichTextBox.Selection.Text = currentmail.Content;
         }
 
         private void StarredList_DoubleClick(object sender, MouseButtonEventArgs e)
         {
             CurrentMail_GroupBox.Visibility = Visibility.Visible;
+            Mail currentmail = (Mail)StarredList.SelectedItem;
+            CurrentMail_RichTextBox.SelectAll();
+            CurrentMail_RichTextBox.Selection.Text = currentmail.Content;
         }
     }
 }
