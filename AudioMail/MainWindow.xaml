@@ -14,7 +14,7 @@
 
         <Frame x:Name="Main" Margin="0,0,0.4,0.4" RenderTransformOrigin="0.5,0.5" Opacity="0.6" Grid.RowSpan="2">
             <Frame.Background>
-                <ImageBrush ImageSource="C:\Users\hferi\Desktop\lessons\7.term\BLG-439E\audio-mail\AudioMail\background.jpg"/>
+                <ImageBrush ImageSource="AudioMail\Images\Background.jpg"/>
             </Frame.Background>
             <Frame.RenderTransform>
                 <TransformGroup>
