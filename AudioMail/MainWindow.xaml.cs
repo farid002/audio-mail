@@ -1,4 +1,22 @@
-﻿using System;
+﻿/*
+ * Istanbul Technical University / Computer Engineering & Informatics
+ * 
+ * 
+ *      Students:        Farid Huseynov      (150160904)
+ *                       Joshgun Rzabayli    (150160901)
+ * 
+ *          Course:          Computer Project I
+ * 
+ * 
+ *              Homework:        Project 1
+ * 
+ * 
+*/
+
+
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -67,10 +85,8 @@ namespace AudioMail
         private void Record_Button_Click(object sender, RoutedEventArgs e)
         {
             Record_Button.IsEnabled = false;
-            Progress_Bar.IsEnabled = true;
             Stop_Button.IsEnabled = true;
             speechRecMain.RecognizeAsync(RecognizeMode.Multiple);
-            Progress_Bar.Value = speechRecMain.AudioLevel;
         }
 
         //Speech to text engine
@@ -111,7 +127,6 @@ namespace AudioMail
             speechRecMain.RecognizeAsyncStop();
             Record_Button.IsEnabled = true;
             Stop_Button.IsEnabled = false;
-            Progress_Bar.IsEnabled = false;
 
         }
 
@@ -223,10 +238,20 @@ namespace AudioMail
             RecordNewMail_Button.IsEnabled = false;
             StopNewMail_Button.IsEnabled = true;
             speechRecNewMail.RecognizeAsync(RecognizeMode.Multiple);
+
+            //Click stop recording command while new mail button is pressed
+            if (Stop_Button.IsEnabled)
+            {
+                ButtonAutomationPeer peerStopCommand = new ButtonAutomationPeer(Stop_Button);
+                IInvokeProvider invokeProvStopCmd = peerStopCommand.GetPattern(PatternInterface.Invoke) as IInvokeProvider;
+                invokeProvStopCmd.Invoke();
+            }
+            
         }
 
         private void StopNewMail_Button_Click(object sender, RoutedEventArgs e)
         {
+            NewMail_RichTextBox.AppendText(" ");
             speechRecNewMail.RecognizeAsyncStop();
             RecordNewMail_Button.IsEnabled = true;
             StopNewMail_Button.IsEnabled = false;
@@ -253,7 +278,16 @@ namespace AudioMail
             Subject_TextBox.Text = "";
             NewMail_RichTextBox.SelectAll();
             NewMail_RichTextBox.Selection.Text = "";
+
+            //Click stop recording new mail while close new mail button is pressed
+            if (StopNewMail_Button.IsEnabled)
+            {
+                ButtonAutomationPeer peerStopNewMail = new ButtonAutomationPeer(StopNewMail_Button);
+                IInvokeProvider invokeProvNewMail = peerStopNewMail.GetPattern(PatternInterface.Invoke) as IInvokeProvider;
+                invokeProvNewMail.Invoke();
+            }
             
+
         }
 
         private void Delete_Button_Click(object sender, RoutedEventArgs e)
